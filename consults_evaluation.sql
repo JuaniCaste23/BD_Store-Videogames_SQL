@@ -16,7 +16,7 @@ values ('3','3','2019-11-23')
 insert into Compra (id_persona,id_videojuego,fecha_de_compra)
 values ('3','10','2019-11-23')
 
-select p.Nombre as 'COMPRADOR',v.Nombre as 'Juego Comprado', v.precio,c.fecha_de_compra from Videojuego as v
+SELECT p.Nombre as 'COMPRADOR',v.Nombre as 'Juego Comprado', v.precio,c.fecha_de_compra from Videojuego as v
 INNER JOIN Compra as c 
 ON v.id_videojuego = c.id_videojuego
 INNER JOIN Persona as p
@@ -27,7 +27,7 @@ ON c.id_persona = p.id_persona WHERE c.id_persona = 3
 SELECT Nombre as 'Nombres con P' from Distribuidora
 WHERE Nombre like 'P%'
 
-select Nombre from Distribuidora
+SELECT Nombre from Distribuidora
 
 /* Nombre del articulo + nombre de la distribuidora */
 
@@ -36,5 +36,5 @@ JOIN articulo as a
 on d.id_distribuidora = a.id_distribuidora
 
 /* Calcular el promedio de los precios*/
-select avg (precio) as 'promedio'
+SELECT avg (precio) as 'promedio'
 from articulo
